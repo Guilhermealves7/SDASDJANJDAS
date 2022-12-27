@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, ShadowPropTypesIOS} from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity} from "react-native";
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import React, { useState } from "react";
 
@@ -13,13 +13,16 @@ import React, { useState } from "react";
 
 export default function FotterCard(props){
 
+    const [click, setClick] = useState(false)
+
     return(
         <View style={[styles.container,
         {
-            backgroundColor: props.bgColor
+            backgroundColor: click ? "#4A73FC" : "#fff"
         }]}>
+            
             <Text style={{
-                color: props.colorFont,
+                color: click ? "#FFF" : "#000",
                 fontFamily: 'courier',
                 marginTop: 7,
                 fontWeight: 'bold'
@@ -27,10 +30,14 @@ export default function FotterCard(props){
                 {props.time}
             </Text>
 
-            <FontAwesome5 name={props.img} size={24} color={props.color} />
+            <TouchableOpacity
+                onPress={() => {setClick(!click)}}
+            >
+            <FontAwesome5 name={click ? "cloud-moon" : "cloud"} size={24} color={click ? "#FFF" : "#4A73FC"} />
+            </TouchableOpacity>
 
             <Text style={{
-                color: props.colorFont,
+                color: click ? "#FFF" : "#000",
                 fontWeight: 'bold',
                 marginBottom: 7,
                 fontFamily: 'courier'
@@ -44,9 +51,9 @@ export default function FotterCard(props){
 
 const styles = StyleSheet.create({
     container:{
-        height: 110,
-        width: 60,
-        marginLeft: 15,
+        height: '150%',
+        width: '30%',
+        marginLeft: 5,
         borderRadius: 10,
         justifyContent: 'space-between',
         alignItems: 'center'

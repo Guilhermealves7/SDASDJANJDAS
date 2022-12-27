@@ -5,7 +5,7 @@ export default function Title(props){
     return(
         <View style={styles.container}>
             <Text style={styles.mainTitle}>{props.cidade}</Text>
-            <Text style={styles.subTitle}>{props.pais} </Text>
+            <Text style={styles.subTitle}>{", "+props.pais} </Text>
         </View>
     );
 }

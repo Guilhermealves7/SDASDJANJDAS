@@ -10,7 +10,11 @@ export default function Fotter(props){
                 next="Next 5 Days"
                 nav = {props.nav}
             />
-            <FotterMain/>
+            <FotterMain
+                temp1 = {props.temp1}
+                temp2 = {props.temp2}
+                temp3 = {props.temp3}
+            />
         </View>
     );  
 }

@@ -1,10 +1,11 @@
 import {View, StyleSheet, Text} from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+
 export default function CardContent(props){
     return(
         <View style={styles.container}>
-            <MaterialCommunityIcons name={props.img} size={80} color="white"
+            <MaterialCommunityIcons name={props.img} size={100} color="white"
                 style={{
                     marginBottom: 5
                 }}
@@ -12,7 +13,6 @@ export default function CardContent(props){
 
             <View>
                 <Text style={styles.mainText}>{props.main}</Text>
-                <Text style={styles.subText}>{props.sub}</Text>
             </View>
 
 

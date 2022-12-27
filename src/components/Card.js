@@ -13,7 +13,6 @@ export default function Card(props){
             <View style={styles.cardMain}>
                 <CardContent
                     main = {props.mainText}
-                    sub = {props.dateText}
                     temp = {props.temperature}
                     img = {props.img}
                 />
@@ -39,8 +38,8 @@ export default function Card(props){
                     top = {1}
                     right = {1}
                 >
-                    <MiniCardContent type="INDEX UV" value={props.uv}>
-                        <Feather name="sun" size={26} color="white" />
+                    <MiniCardContent type="HUMIDITY" value={props.um}>
+                        <Feather name="cloud-rain" size={26} color="white" />
                     </MiniCardContent>
                 </MiniCard>
                 <MiniCard
